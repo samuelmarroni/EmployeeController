@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #1A1F24;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.app-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #546172;
+    color:#FFFFFF;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #1A1F24;
+    color: #FFFFFF;
+    max-height: 80px;
+}
+
+.app-header .admin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#avatar {
+    max-width: 30px;
+    max-height: 30px;
+    filter: brightness(0) invert(1);
+}
+
+#logo {
+    filter: brightness(0) invert(1);
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
