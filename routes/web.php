@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('/department/index', [DepartmentController::class, 'index']);
 Route::get('/department/create', [DepartmentController::class, 'create']);
+Route::get('/employee/index', [EmployeeController::class, 'index']);
+Route::get('/employee/create', [EmployeeController::class, 'create']);
