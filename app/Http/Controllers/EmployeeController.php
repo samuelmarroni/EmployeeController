@@ -7,25 +7,22 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public static function index()
+    public static function index(Request $request)
     {
-        $employees = Employee::all()->toArray();
+        $form = $request->all();
+        $employees = Employee::list($form);
 
         return view('employee.index', [
             'employees' => $employees
         ]);
     }
 
-    public static function create(Request $request): void
+    public static function create(Request $request)
     {
         $form = $request->all();
 
-        $employee = new Employee();
-        $employee->name = $form['name'];
-        $employee->birthday = $form['birthday'];
-        $employee->document = $form['document'];
-        $employee->position = $form['position'];
-        $employee->salary = $form['salary'];
-        $employee->department_id = $form['department'];
+        Employee::create($form);
+
+        return redirect("/");
     }
 }
