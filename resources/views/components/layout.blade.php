@@ -2,7 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/generic.css">
+    <link rel="stylesheet" href="/css/app/app.css">
+    <link rel="manifest" href="/pwa/manifest.webmanifest">
     <title>{{ $title }}</title>
 </head>
 <body>
@@ -13,12 +16,12 @@
             <img id="avatar" src="/img/admin.svg" alt="Avatar">
         </div>
     </header>
-    <h1>{{ $title }}</h1>
 
     {{ $slot }}
 
     <footer class="app-footer">
         <span>Samuel {{ date('Y') }}</span>
     </footer>
+    <script src="/pwa/index.js"></script>
 </body>
 </html>

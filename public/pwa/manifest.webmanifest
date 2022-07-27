@@ -1,0 +1,18 @@
+{
+    "short_name": "Samuel",
+    "name": "Samuel Marroni",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "theme-color": "#ffffff",
+    "background_color": "#000000",
+    "background-color": "#000000",
+    "description": "Página controle de funcionários",
+    "icons": [
+        {
+            "src": "/img/icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
+}

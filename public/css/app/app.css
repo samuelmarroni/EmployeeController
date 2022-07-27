@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root {
-    --primary-color: #546172;
-    --secondary-color: #1A1F24
+    --primary-color: #ff4848;
+    --secondary-color: #deac3e;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 section {
@@ -13,7 +22,37 @@ section {
     flex-direction: column;
     padding: 40px;
     gap: 40px;
+    flex-grow: 1;
 }
+
+h1 {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 200%;
+}
+h2 {
+    font-weight: normal;
+}
+h1, h2 {
+    margin: 0;
+}
+
+.home {
+    justify-content: center;
+    align-items: center;
+}
+.home-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
 
 .flex-row {
     display: flex;
@@ -22,26 +61,30 @@ section {
     gap: 20px;
 }
 .flex-right {justify-content: end;}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
 
-.app-footer {
+.app-footer, 
+.app-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background: var(--secondary-color);
+    padding: 20px 40px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color:#FFFFFF;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 .app-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 40px;
-    background: var(--primary-color);
-    color: #FFFFFF;
     max-height: 80px;
 }
 .app-header .admin {
@@ -62,36 +105,50 @@ section {
     filter: brightness(0) invert(1);
 }
 
-h1 {
-    text-align: center;
-    margin: 20px;
+#employee,
+#department {
+    height: 100px;
+    width: 100px;
 }
 
-h2 {
-    color: var(--secondary-color);
+.box {
+    display: flex;
+    flex-direction: column;
 }
-
-#welcome-title {
-    justify-content: space-between;
-    align-items: center;
+.box, fieldset {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 100%;
+    box-shadow: 0 4px 30px 0 rgb(0 0 0 / 10%);
 }
 
 /*css button*/
 .button {
-    border-radius: 15px;
-    padding: 7px 25px;
+    border-radius: 18px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 90%;
+    letter-spacing: 0.5px;
+    padding: 5px 25px;
     border-width: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+    transition: 500ms;
 }
 .button.primary {
     background: var(--primary-color);
     color: #FFFFFF;
 }
 .button.secondary {
-    background: var(--secondary-color);
+    background: #FFFFFF;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.button.secondary:hover {
+    background: var(--primary-color);
     color: #FFFFFF;
 }
 
@@ -99,7 +156,6 @@ h2 {
 .form-line {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
 }
 .form-line > * {margin: 10px;}
@@ -130,7 +186,6 @@ input, select {
 
 fieldset {
     border: 1px solid rgb(255 255 255 / 30%);
-    border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 30%);
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -13,11 +14,17 @@ class EmployeeController extends Controller
         $employees = Employee::list($form);
 
         return view('employee.index', [
-            'employees' => $employees
+            'employees' => $employees,
+            'departments' => Department::all()
         ]);
     }
 
-    public static function create(Request $request)
+    public static function create()
+    {
+        return view('employee.create');
+    }
+
+    public static function createForm(Request $request)
     {
         $form = $request->all();
 

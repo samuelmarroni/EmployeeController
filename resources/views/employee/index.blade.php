@@ -13,6 +13,9 @@
                         <label class="form-label" >Departamento</label>
                         <select type="text" name="department">
                             <option value=""></option>
+                            @foreach ($departments as $department)
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-column">
@@ -27,9 +30,25 @@
             </fieldset>
         </form>
         <table>
-            @foreach ($employees as $employee)
-                {{ $employee->name }}
-            @endforeach
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Salário</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($employees as $employee)
+                    <tr>
+                        <td>{{ $employee->name }}</td>
+                        <td>{{ $employee->position }}</td>
+                        <td>{{ $employee->department->name }}</td>
+                        <td>{{ $employee->salary }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+            
         </table>
         <div class="flex-row flex-right">
             <a class="button primary" href="/employee/create">Cadastrar</a>

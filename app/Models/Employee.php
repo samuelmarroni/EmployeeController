@@ -27,6 +27,11 @@ class Employee extends Model
         return $employee->paginate(10);
     }
 
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
     public static function create($form)
     {
         $employee = new Employee();
