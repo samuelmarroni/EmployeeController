@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//GET: Lista, POST: Adiciona, PUT: Edita, DELETE: Deleta.
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/department/index', [DepartmentController::class, 'index']);
-Route::get('/department/create', [DepartmentController::class, 'create']);
 Route::get('/employee/index', [EmployeeController::class, 'index']);
 Route::get('/employee/create', [EmployeeController::class, 'create']);
+Route::post('/employee/createForm', [EmployeeController::class, 'createForm']);

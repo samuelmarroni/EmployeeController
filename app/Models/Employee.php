@@ -8,9 +8,9 @@ class Employee extends Model
 {
     public $timestamps = false;
 
-    public static function list($form)
+    public static function list($form = [])
     {
-        $employee = new Employee();
+        $employee = Employee::where('id', '<>', null);
 
         if (@$form['position']) {
             $employee->where('position', $form['position']);

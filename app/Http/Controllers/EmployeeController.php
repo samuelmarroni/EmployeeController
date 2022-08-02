@@ -21,7 +21,9 @@ class EmployeeController extends Controller
 
     public static function create()
     {
-        return view('employee.create');
+        return view('employee.create', [
+            'departments' => Department::all()
+        ]);
     }
 
     public static function createForm(Request $request)
@@ -30,6 +32,7 @@ class EmployeeController extends Controller
 
         Employee::create($form);
 
-        return redirect("/");
+        $request->session()->flash('status', 'Cadastrado com sucesso!');
+        return redirect("/employee/index");
     }
 }

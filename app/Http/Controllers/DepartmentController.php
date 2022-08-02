@@ -7,22 +7,13 @@ use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
-    public static function index()
+    public static function index(Request $request)
     {
-        $departments = Department::all()->toArray();
+        $form = $request->all();
+        $departments = Department::list($form);
 
         return view('department.index', [
             'departments' => $departments
         ]);
     }
-
-    public static function create(Request $request): void
-    {
-        $form = $request->all();
-
-        $department = new Department();
-        $department->name = "TI";
-        $department->save();
-    }
-
 }

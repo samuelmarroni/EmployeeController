@@ -1,6 +1,7 @@
 <x-layout title="Cadastro de Funcionário">
     <section class="site-limits">
         <form method="POST" action="/employee/createForm">
+            @csrf
             <fieldset>
                 <legend>Dados</legend>
                 <div class="form-line">
@@ -31,7 +32,12 @@
                     </div>
                     <div class="form-col">
                         <label class="form-label">Departamento</label>
-                        <input type="text" name="department">
+                        <select type="text" name="department">
+                            <option value=""></option>
+                            @foreach ($departments as $department)
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
             </fieldset>

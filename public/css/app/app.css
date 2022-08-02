@@ -52,7 +52,9 @@ h1, h2 {
 .space-around {
     justify-content: space-around;
 }
-
+.text-center {
+    text-align: center;
+}
 
 .flex-row {
     display: flex;

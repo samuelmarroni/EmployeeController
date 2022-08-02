@@ -54,4 +54,9 @@
             <a class="button primary" href="/employee/create">Cadastrar</a>
         </div>
     </section>
+    @if (session('status'))
+        <script>
+            alert("{{ session('status') }}")
+        </script>
+    @endif
 </x-layout>
