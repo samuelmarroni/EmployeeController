@@ -4,7 +4,7 @@
             <h1>Home</h1>
             <h2>Selecione uma opção</h2>
         </div>
-        <div class="flex-row space-around">
+        <div class="flex-row space-around hcenter">
             <div class="flex-col">
                 <img id="employee" src="/img/employee.svg">
                 <a class="button secondary" href="/employee/index">Funcionários</a>

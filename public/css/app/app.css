@@ -20,8 +20,6 @@ body {
 section {
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    gap: 40px;
     flex-grow: 1;
 }
 
@@ -62,14 +60,12 @@ h1, h2 {
     padding: 20px;
     gap: 20px;
 }
-.flex-right {justify-content: end;}
+.right {justify-content: end;}
 .flex-col {
     display: flex;
     flex-direction: column;
     padding: 30px;
     gap: 30px;
-    justify-content: center;
-    align-items: center;
 }
 
 .app-footer, 
@@ -111,11 +107,13 @@ h1, h2 {
 #department {
     height: 100px;
     width: 100px;
+    margin: auto;
 }
 
 .box {
     display: flex;
     flex-direction: column;
+    padding: 40px;
 }
 .box, fieldset {
     background: #FFFFFF;
@@ -200,3 +198,33 @@ fieldset legend {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.hcenter {justify-content: space-around;}
+
+.space-40 {
+    padding: 40px;
+    gap: 40px;
+}
+.space-20 {
+    padding: 20px;
+    gap: 20px;
+}
+.padding-0 {padding: 0;}
+
+.grow {flex-grow: 1;}
+
+th {
+    text-align: left;
+    padding: 20px 0;
+}
+td {
+    padding: 20px 0;
+    border-top: 1px solid #00000050;
+}
+table {
+    border: 1px solid #00000050;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+.wrap {flex-wrap: wrap;}

@@ -21,6 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/department/index', [DepartmentController::class, 'index']);
+Route::get('/department/create', [DepartmentController::class, 'create']);
+Route::post('/department/createForm', [DepartmentController::class, 'createForm']);
 Route::get('/employee/index', [EmployeeController::class, 'index']);
 Route::get('/employee/create', [EmployeeController::class, 'create']);
 Route::post('/employee/createForm', [EmployeeController::class, 'createForm']);

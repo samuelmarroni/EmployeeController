@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="app-header">
-        <img id="logo" src="/img/logo.svg" alt="Logo">
+        <a href="/"><img id="logo" src="/img/logo.svg" alt="Logo"></a>
         <div class="admin">
             <span>Olá, Admin!</span>
             <img id="avatar" src="/img/admin.svg" alt="Avatar">
@@ -23,5 +23,6 @@
         <span>Samuel {{ date('Y') }}</span>
     </footer>
     <script src="/pwa/index.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

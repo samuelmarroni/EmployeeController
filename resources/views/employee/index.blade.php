@@ -1,15 +1,20 @@
 <x-layout title="Funcionários">
-    <section class="site-limits">
+    <section class="site-limits flex-col space-40">
+        <h1 class="text-center">Listagem de Funcionários</h1>
         <form>
             @csrf
             <fieldset>
                 <legend>Filtros</legend>
                 <div class="form-line">
-                    <div class="form-column">
-                        <label class="form-label">Cargo</label>
-                        <input type="text" name="position">
+                    <div class="form-col">
+                        <label class="form-label">Nome</label>
+                        <input maxlength="50" type="text" name="name">
                     </div>
-                    <div class="form-column">
+                    <div class="form-col">
+                        <label class="form-label">Cargo</label>
+                        <input maxlength="20" type="text" name="position">
+                    </div>
+                    <div class="form-col">
                         <label class="form-label" >Departamento</label>
                         <select type="text" name="department">
                             <option value=""></option>
@@ -18,17 +23,18 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-column">
+                    <div class="form-col">
                         <label class="form-label">Salário</label>
                         <input type="text" name="salary">
                     </div>
-                    <div class="form-column">
+                    <div class="form-col">
                         <label class="form-label">&nbsp;</label>
                         <button class="button primary" type="submit">Filtrar</button>
                     </div>
                 </div>
             </fieldset>
         </form>
+        <small>Foram encontrados {{count($employees)}} registros.</small>
         <table>
             <thead>
                 <tr>
@@ -50,7 +56,8 @@
             </tbody>
             
         </table>
-        <div class="flex-row flex-right">
+        <div class="flex-row right">
+            <span class="button secondary">{{ $employees->links() }}</span>
             <a class="button primary" href="/employee/create">Cadastrar</a>
         </div>
     </section>

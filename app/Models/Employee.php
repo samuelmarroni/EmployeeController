@@ -24,7 +24,11 @@ class Employee extends Model
             $employee->where('department_id', $form['department']);
         }
 
-        return $employee->paginate(10);
+        if (@$form['name']) {
+            $employee->where('name', 'like', '%' . $form['name'] . '%');
+        }
+
+        return $employee->simplePaginate(10);
     }
 
     public function department()

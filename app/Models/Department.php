@@ -16,11 +16,18 @@ class Department extends Model
             $department->where('name', $form['name']);
         }
 
-        return $department->paginate(10);
+        return $department->paginate(12);
     }
 
     public function employees()
     {
         return $this->hasMany(Employee::class);
+    }
+
+    public static function create($form)
+    {
+        $department = new Department();
+        $department->name = $form['name'];
+        $department->save();
     }
 }
